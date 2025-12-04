@@ -9,7 +9,7 @@ export default function Navbar() {
 
       <div className="nav-left" style={{ display: "flex", alignItems: "center" }}>
   <img
-    src="src\Images\Logo.png"
+    src="/src/Images/Logo.png"
     alt="CENVORO Logo"
     style={{
       height: "70px",
