@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Footer() {
+
+    useEffect(() => {
+  const columns = document.querySelectorAll(".footer-column");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  columns.forEach((col) => observer.observe(col));
+}, []);
+
+
   return (
     <footer>
       <div className="container">

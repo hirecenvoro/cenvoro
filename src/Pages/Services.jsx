@@ -1,7 +1,27 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 
 function Services() {
   const [activeService, setActiveService] = useState(null);
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  document.querySelectorAll(".service-card").forEach(card => {
+    observer.observe(card);
+  });
+
+  return () => observer.disconnect();
+}, []);
+
 
   return (
     <section className="services" id="services">

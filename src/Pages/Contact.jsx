@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Contact() {
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  // Observe left side contact info container
+  observer.observe(document.querySelector(".contact-info"));
+
+  // Observe each contact-item
+  document.querySelectorAll(".contact-item").forEach((item) => {
+    observer.observe(item);
+  });
+
+  // Observe right side form
+  observer.observe(document.querySelector(".contact-form"));
+
+  return () => observer.disconnect();
+}, []);
+
   return (
+
+    
     <section className="contact" id="contact">
 
       <div className="container">

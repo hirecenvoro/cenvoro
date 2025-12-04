@@ -1,6 +1,28 @@
 import React from "react";
+import { useEffect } from "react";
 
 function Home() {
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  document
+    .querySelectorAll(".about-text, .about-image")
+    .forEach((el) => observer.observe(el));
+
+  return () => observer.disconnect();
+}, []);
+
+  
   
               function createParticles() {
                 const particlesContainer = document.getElementById('particles');
@@ -28,10 +50,12 @@ function Home() {
             
             createParticles();
 
+            
+
   return (
     <>
       <section className="hero">
-        <div class="particles" id="particles"></div>
+        <div className="particles" id="particles"></div>
         <div className="hero-content">
           <h1>AT THE CENTER OF GROWTH</h1>
           <h2>Connecting talent with opportunities</h2>

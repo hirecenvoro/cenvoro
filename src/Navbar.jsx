@@ -6,9 +6,19 @@ export default function Navbar() {
 
   return (
     <nav className="navbar" style={{ fontFamily: '"Segoe UI", sans-serif' }}>
-      <div className="nav-left">
-        <a href="/">CENVORO</a>
-      </div>
+
+      <div className="nav-left" style={{ display: "flex", alignItems: "center" }}>
+  <img
+    src="src\Images\Logo.png"
+    alt="CENVORO Logo"
+    style={{
+      height: "70px",
+      width: "auto",
+      paddingRight:"15px",
+    }}
+  />
+  <a href="/">CENVORO</a>
+</div>
 
       {/* Hamburger Icon */}
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -17,6 +27,7 @@ export default function Navbar() {
         <span></span>
       </div>
 
+      {/* Nav Links */}
       <ul className={`nav-center ${menuOpen ? "open" : ""}`}>
         <li><a href="/">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -26,7 +37,9 @@ export default function Navbar() {
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <button className="login-btn" style={{ fontFamily: '"Segoe UI", sans-serif' }}>Login</button>
+      <button className="login-btn" style={{ fontFamily: '"Segoe UI", sans-serif' }}>
+        Login
+      </button>
     </nav>
   );
 }
