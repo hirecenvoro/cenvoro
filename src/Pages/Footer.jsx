@@ -20,6 +20,30 @@ function Footer() {
 }, []);
 
 
+useEffect(() => {
+  const footerLeft = document.querySelector(".footer-left"); // select your container
+
+  if (!footerLeft) return; // prevent error if element not found
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.3 } // 30% visible triggers
+  );
+
+  observer.observe(footerLeft);
+
+  // Cleanup
+  return () => observer.unobserve(footerLeft);
+}, []);
+
+
+
   return (
     <footer>
       <div className="container">

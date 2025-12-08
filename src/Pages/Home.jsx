@@ -4,53 +4,51 @@ import { useEffect } from "react";
 function Home() {
 
   useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  document
-    .querySelectorAll(".about-text, .about-image")
-    .forEach((el) => observer.observe(el));
+    document
+      .querySelectorAll(".about-text, .about-image")
+      .forEach((el) => observer.observe(el));
 
-  return () => observer.disconnect();
-}, []);
+    return () => observer.disconnect();
+  }, []);
 
-  
-  
-              function createParticles() {
-                const particlesContainer = document.getElementById('particles');
-                const particleCount = 30;
-                
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-                    
-                    // Random properties
-                    const size = Math.random() * 5 + 2;
-                    const left = Math.random() * 100;
-                    const animationDuration = Math.random() * 20 + 10;
-                    const animationDelay = Math.random() * 5;
-                    
-                    particle.style.width = `${size}px`;
-                    particle.style.height = `${size}px`;
-                    particle.style.left = `${left}%`;
-                    particle.style.animationDuration = `${animationDuration}s`;
-                    particle.style.animationDelay = `${animationDelay}s`;
-                    
-                    particlesContainer.appendChild(particle);
-                }
-            }
-            
-            createParticles();
 
-            
+  function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 30;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      // Random properties
+      const size = Math.random() * 5 + 2;
+      const left = Math.random() * 100;
+      const animationDuration = Math.random() * 20 + 10;
+      const animationDelay = Math.random() * 5;
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${left}%`;
+      particle.style.animationDuration = `${animationDuration}s`;
+      particle.style.animationDelay = `${animationDelay}s`;
+
+      particlesContainer.appendChild(particle);
+    }
+  }
+
+  createParticles();
+
 
   return (
     <>
