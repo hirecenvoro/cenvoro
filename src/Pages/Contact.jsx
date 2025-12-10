@@ -34,7 +34,12 @@ function Contact() {
     <section className="contact" id="contact">
 
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title" style={{
+          fontFamily: "Montserrat, sans-serif",
+          fontSize: "24px",
+
+          fontWeight: 700,
+        }}>Get In Touch</h2>
 
         <div className="contact-container">
           {/* LEFT SIDE - CONTACT INFO */}
@@ -75,25 +80,25 @@ function Contact() {
 
 
             <a
-  href="https://www.google.com/maps/search/?api=1&query=4th+floor+Zenia+building+Hiranandani+circle+Hiranandani+business+park+Thane+Maharashtra+400607"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{ textDecoration: "none", color: "inherit" }}
->
-  <div className="contact-item">
-    <div className="contact-icon">
-      <i className="fas fa-map-marker-alt"></i>
-    </div>
-    <div className="contact-details">
-      <h4>Address</h4>
-      <p>
-        4th floor Zenia building,<br /> 
-        Hiranandani circle, Hiranandani business park,<br />
-        Thane, Maharashtra - 400607
-      </p>
-    </div>
-  </div>
-</a>
+              href="https://www.google.com/maps/search/?api=1&query=4th+floor+Zenia+building+Hiranandani+circle+Hiranandani+business+park+Thane+Maharashtra+400607"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <i className="fas fa-map-marker-alt"></i>
+                </div>
+                <div className="contact-details">
+                  <h4>Address</h4>
+                  <p>
+                    4th floor Zenia building,<br />
+                    Hiranandani circle, Hiranandani business park,<br />
+                    Thane, Maharashtra - 400607
+                  </p>
+                </div>
+              </div>
+            </a>
 
           </div>
 
