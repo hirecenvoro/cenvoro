@@ -19,17 +19,17 @@ function Contact() {
     e.preventDefault(); // Prevent refresh
 
     emailjs
-      emailjs.send(
-  "service_phd16to",
-  "template_t1ulqok",
-  {
-    name: formData.name,
-    email: formData.email,
-    mobile: formData.mobile,
-    message: formData.message,
-  },
-  "v28GVeI8dl0N01xYt"
-)
+    emailjs.send(
+      "service_phd16to",
+      "template_t1ulqok",
+      {
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        message: formData.message,
+      },
+      "v28GVeI8dl0N01xYt"
+    )
 
       .then(
         () => {
@@ -156,24 +156,42 @@ function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="form-control"
                   required
                   value={formData.email}
                   onChange={handleChange}
+                  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                  title="Please enter a valid email address"
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="mobile">Mobile No.</label>
                 <input
-                  type="text"
+                  inputMode="numeric" pattern="[0-9]*"
+
+                  type="numeric"
                   id="mobile"
+                  name="mobile"
                   className="form-control"
                   required
                   value={formData.mobile}
-                  onChange={handleChange}
+                  onChange={(e) =>
+                    handleChange({
+                      target: {
+                        name: "mobile",
+                        value: e.target.value.replace(/[^0-9]/g, "")
+                      }
+                    })
+                  }
+
+                  maxLength="10"
+                  title="Enter a valid 10-digit mobile number"
+
                 />
               </div>
+
 
               <div className="form-group">
                 <label htmlFor="message">Message</label>
