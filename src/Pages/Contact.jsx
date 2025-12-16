@@ -177,14 +177,12 @@ function Contact() {
                   className="form-control"
                   required
                   value={formData.mobile}
-                  onChange={(e) =>
-                    handleChange({
-                      target: {
-                        name: "mobile",
-                        value: e.target.value.replace(/[^0-9]/g, "")
-                      }
-                    })
-                  }
+                  
+                  onChange={(e) => {
+  const value = e.target.value.replace(/[^0-9]/g, "");
+  setFormData({ ...formData, mobile: value });
+}}
+
 
                   maxLength="10"
                   title="Enter a valid 10-digit mobile number"
