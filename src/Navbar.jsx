@@ -58,7 +58,7 @@ export default function Navbar() {
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#jobs">Find Jobs</a></li>
-        <li><a href="#talent">Hire Talent</a></li>
+        <li><a href="/hiretalent">Hire Talent</a></li>
         <li><a href="#contact">Contact</a></li>
 
         {/* Show login button INSIDE menu on mobile */}

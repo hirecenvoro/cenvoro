@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -66,7 +67,9 @@ function Home() {
 
           <div className="hero-buttons">
             <button className="btn-primary">Find Jobs</button>
-            <button className="btn-outline">Hire Talent</button>
+            <Link to="/hiretalent">
+  <button className="btn-outline">Hire Talent</button>
+</Link>
           </div>
         </div>
       </section>
