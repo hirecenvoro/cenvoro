@@ -1,14 +1,4 @@
-.bg{
-    background-color: #f8f9fc;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      rgba(0,0,0,0.03),
-      rgba(0,0,0,0.03) 1px,
-      transparent 1px,
-      transparent 14px
-    );
-}
+
 
 .hire-hero {
   width: 100%;
@@ -31,27 +21,9 @@
   color: rgb(51,51,51);
   font-weight: 400;
   font-family: poppins,sans-serif;
+  margin-bottom: 50px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hire-hero {
-    padding: 80px 16px 60px;
-  }
-
-  .hire-hero h1 {
-    font-size: 34px;
-  }
-
-  .hire-hero p {
-    font-size: 16px;
-  }
-}
-
-
-.hire-talent-section {
-  padding: 80px 40px;
-}
 
 .hire-cards {
   display: grid;
@@ -135,88 +107,6 @@
 
 .icon.green {
   background: #16a34a;
-}
-
-/* Mrdia queries */
-
-/* ===== Tablets (1024px and below) ===== */
-@media (max-width: 1024px) {
-  .hire-hero h1 {
-    font-size: 40px;
-  }
-
-  .hire-card h3 {
-    font-size: 24px;
-  }
-
-  .hire-talent-section {
-    padding: 60px 30px;
-  }
-}
-
-/* ===== Mobile (768px and below) ===== */
-@media (max-width: 768px) {
-  .hire-hero {
-    padding: 50px 16px;
-  }
-
-  .hire-hero h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-
-  .hire-hero p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .hire-talent-section {
-    padding: 50px 20px;
-  }
-
-  .hire-card {
-    padding: 24px;
-  }
-
-  .hire-card h3 {
-    font-size: 22px;
-  }
-
-  .icon {
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
-  }
-}
-
-/* ===== Small Mobile (480px and below) ===== */
-@media (max-width: 480px) {
-  .hire-hero h1 {
-    font-size: 26px;
-  }
-
-  .hire-hero p {
-    font-size: 14px;
-  }
-
-  .hire-card {
-    padding: 20px;
-  }
-
-  .hire-card h3 {
-    font-size: 20px;
-  }
-
-  .hire-card p,
-  .hire-card ul li {
-    font-size: 13px;
-  }
-
-  .icon {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
 }
 
 /* Form */
@@ -408,4 +298,100 @@
 .hire-form-wrapper.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+@media (max-width: 1024px) {
+  .hire-hero h1 {
+    font-size: 38px;
+  }
+
+  .hire-talent-section {
+    padding: 60px 24px;
+  }
+
+  .hire-card h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hire-hero {
+    padding: 40px 16px;
+  }
+
+  .hire-hero h1 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .hire-hero p {
+    font-size: 15px;
+  }
+
+  /* CARDS */
+  .hire-talent-section {
+    padding: 40px 16px;
+  }
+
+  .hire-cards {
+    grid-template-columns: 1fr; /* 🔥 FORCE single column */
+    gap: 20px;
+  }
+
+  .hire-card {
+    padding: 22px;
+  }
+
+  .hire-card h3 {
+    font-size: 22px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* FORM */
+  .hire-form {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width,
+  .submit-btn {
+    grid-column: span 1;
+  }
+
+  .hire-form-card {
+    padding: 28px 18px;
+  }
+}
+@media (max-width: 480px) {
+
+  .hire-hero h1 {
+    font-size: 26px;
+  }
+
+  .hire-hero p {
+    font-size: 14px;
+  }
+
+  .hire-card {
+    padding: 18px;
+  }
+
+  .hire-card h3 {
+    font-size: 20px;
+  }
+
+  .hire-card p,
+  .hire-card ul li {
+    font-size: 13px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
 }
