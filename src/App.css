@@ -613,10 +613,12 @@ body, html {
 
 /* PARAGRAPH */
 .service-detail-content p {
-  font-size: 17px;
+  font-size: 18px;
   color: #444;
   margin-bottom: 25px;
   line-height: 1.6;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
 }
 
 /* LIST STYLING */
@@ -1168,6 +1170,7 @@ footer p {
 .footer-left {
   text-align: left;
   /* Make everything align left */
+  margin-right: 54px;
 }
 
 .footer-left h3 {
@@ -2284,4 +2287,14 @@ footer p {
 .mission-list li:nth-child(2) { transition-delay: 0.25s; }
 .mission-list li:nth-child(3) { transition-delay: 0.4s; }
 
+
+
+
+.service-detail-image img {
+  width: 100%;
+  height: auto;           /* 🔥 key change */
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
 

@@ -213,7 +213,7 @@ function Services() {
               />
             </div>
             <div className="service-detail-content">
-              <h2>For Institutes – Placement Partnerships</h2>
+              <h2>For Institutes - Placement Partnerships</h2>
               <p>We strengthen student placement outcomes.</p>
 
               <ul className="benefits-list">
@@ -231,7 +231,7 @@ function Services() {
                     alt="star"
                     className="star-icon"
                   />
-                  Stronger institute–industry relationships
+                  Stronger institute-industry relationships
                 </li>
 
                 <li>
@@ -284,7 +284,7 @@ function Services() {
               />
             </div>
             <div className="service-detail-content">
-              <h2>For Employers – Recruitment & Training</h2>
+              <h2>For Employers - Recruitment & Training</h2>
               <p>We provide companies with efficient hiring solutions.</p>
 
               <ul className="benefits-list">

@@ -16,10 +16,10 @@
 .hire-hero p {
   max-width: 900px;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
-  color: rgb(51,51,51);
-  font-weight: 400;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
   font-family: poppins,sans-serif;
   margin-bottom: 50px;
 }
@@ -449,4 +449,42 @@
 .blur-bg > * {
   position: relative;
   z-index: 1;
+}
+
+
+/* Remove bottom gap from Hire Form section */
+.hire-form-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 5 !important;
+}
+
+/* Ensure card doesn't push footer */
+.hire-form-card {
+  margin-bottom: 0;
+}
+
+/* Footer should sit immediately after */
+footer {
+  margin-top: 0 !important;
+}
+
+
+/* Particle layer */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Form card above particles */
+.hire-form-card {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+}
+footer {
+  margin-top: 0 !important;
 }

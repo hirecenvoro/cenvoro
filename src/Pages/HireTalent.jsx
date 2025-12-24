@@ -55,6 +55,7 @@ function HireTalent() {
     "--bg-image":
       "url('https://t3.ftcdn.net/jpg/06/27/47/28/360_F_627472893_v2tJ71F6BCRMfTXsnxEJiFjtDFNTjVGt.jpg')",
   }}>
+    
                 <div className="hire-hero animate hero-animate">
                     <h1>Hire Top Talent</h1>
                     <p>

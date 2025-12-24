@@ -165,7 +165,8 @@ function Contact() {
                   title="Please enter a valid email address"
                 />
               </div>
-
+              <div className="form-group">
+                <label htmlFor="email">Mobile No.</label>
               <input
                 type="text"
                 inputMode="numeric"
@@ -181,7 +182,7 @@ function Contact() {
                 }}
                 maxLength="10"
               />
-
+              </div>
 
 
               <div className="form-group">
