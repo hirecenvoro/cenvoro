@@ -143,11 +143,12 @@
   flex-direction: column;
 }
 
+
 .form-group label {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #111827;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+  color:rgb(10,61,145) !important;
 }
 
 .form-group input,
@@ -394,4 +395,58 @@
     width: 40px;
     height: 40px;
   }
+}
+
+
+/* ===== Hover Lift & Shadow ===== */
+.hire-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  border-color: #1a52c4;
+}
+
+
+.hire-card:hover::before {
+  opacity: 1;
+}
+
+
+.hire-card:hover ul li {
+  transform: translateX(6px);
+
+}
+
+
+/* ===== Blurred Background Wrapper ===== */
+.blur-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.blur-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transform: scale(1.1); /* prevents edge cut */
+  z-index: -1;
+}
+
+/* Optional dark overlay */
+.blur-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* Content stays sharp */
+.blur-bg > * {
+  position: relative;
+  z-index: 1;
 }
