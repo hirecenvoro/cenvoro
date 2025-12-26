@@ -3,21 +3,21 @@ import React, { useEffect } from "react";
 function About() {
 
   useEffect(() => {
-  const items = document.querySelectorAll(".mission-list li");
+    const items = document.querySelectorAll(".mission-list li");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-  items.forEach((item) => observer.observe(item));
-}, []);
+    items.forEach((item) => observer.observe(item));
+  }, []);
 
 
   useEffect(() => {
@@ -38,7 +38,7 @@ function About() {
 
   return (
     <div>
-       <section className="about" id="about">
+      <section className="about" id="about">
 
         <div className="container">
           <h2 className="section-title">About CENVORO</h2>
@@ -47,32 +47,26 @@ function About() {
             {/* LEFT TEXT */}
             <div className="about-text">
               <p>
-                At CENVORO, we believe growth happens when the right people meet
-                the right opportunities. We are a consultancy that bridges
-                corporates, institutes, and professionals to build future-ready
-                teams.
+                CENVORO exists to connect ambition with opportunity.
+                We partner with corporates, institutes, and professionals to create future-ready talent ecosystems
               </p>
 
-              <p>Our mission is simple:</p>
+              <p>Our mission is simple yet powerful:</p>
 
               <ul className="mission-list">
                 <li>
-                  <i className="fas fa-check-circle"></i> Help companies hire
-                  smarter
+                  <i className="fas fa-check-circle"></i> Enable smarter hiring for companies
                 </li>
                 <li>
-                  <i className="fas fa-check-circle"></i> Help candidates grow
-                  faster
+                  <i className="fas fa-check-circle"></i> Accelerate professional growth
                 </li>
                 <li>
-                  <i className="fas fa-check-circle"></i> Help institutes enable
-                  better placements
+                  <i className="fas fa-check-circle"></i> Strengthen placement outcomes for institutes
                 </li>
               </ul>
 
               <p>
-                With strict compliance, data privacy, and personalized solutions,
-                CENVORO stands as a trusted partner for long-term success.
+                With a foundation of compliance, data security, and tailored solutions, CENVORO delivers partnerships that grow with you.
               </p>
             </div>
 
