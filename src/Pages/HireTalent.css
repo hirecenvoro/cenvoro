@@ -488,3 +488,19 @@ footer {
 footer {
   margin-top: 0 !important;
 }
+
+.cancel-btn {
+  margin-left: 12px;
+  padding: 12px 18px;
+  background: #fff;
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancel-btn:hover {
+  background: #ff4d4f;
+  color: #fff;
+}

@@ -9,6 +9,7 @@ function HireTalent() {
 
     const [phone, setPhone] = useState("");
     const [error, setError] = useState("");
+    const [file, setFile] = useState(null);
 
     const handlePhoneChange = (value, country) => {
         setPhone(value);
@@ -50,12 +51,12 @@ function HireTalent() {
     }, []);
     return (
         <>
-            <div  className="blur-bg"
-  style={{
-    "--bg-image":
-      "url('https://t3.ftcdn.net/jpg/06/27/47/28/360_F_627472893_v2tJ71F6BCRMfTXsnxEJiFjtDFNTjVGt.jpg')",
-  }}>
-    
+            <div className="blur-bg"
+                style={{
+                    "--bg-image":
+                        "url('https://t3.ftcdn.net/jpg/06/27/47/28/360_F_627472893_v2tJ71F6BCRMfTXsnxEJiFjtDFNTjVGt.jpg')",
+                }}>
+
                 <div className="hire-hero animate hero-animate">
                     <h1>Hire Top Talent</h1>
                     <p>
@@ -127,70 +128,142 @@ function HireTalent() {
 
                 <section className="hire-form-wrapper animate fade-up">
                     <div className="hire-form-card">
-                        <h2 style={{
-                            fontSize: "30px",
-                            fontWeight: "700",
-                            color: "rgb(3,58,140)",
-                            marginBottom: "45px",
-                        }}>Start Your Hiring Journey</h2>
+                        <h2
+                            style={{
+                                fontSize: "30px",
+                                fontWeight: "700",
+                                color: "rgb(3,58,140)",
+                                marginBottom: "35px",
+                            }}
+                        >
+                            Start Your Hiring Journey
+                        </h2>
 
                         <form className="hire-form">
-                            <div className="form-group animate fade-up delay-1">
+                            {/* ===== Company Details ===== */}
+                            <div className="form-group">
                                 <label>Company Name</label>
                                 <input type="text" placeholder="Your company name" />
                             </div>
 
-                            <div className="form-group animate fade-up delay-1">
+                            <div className="form-group">
                                 <label>Contact Person</label>
                                 <input type="text" placeholder="Your full name" />
                             </div>
 
-                            <div className="form-group animate fade-up delay-1">
+                            <div className="form-group">
                                 <label>Email</label>
                                 <input type="email" placeholder="your.email@company.com" />
                             </div>
 
-                            <div className="form-group animate fade-up delay-1">
-                                <label>Phone</label>
+                            <div className="form-group full-width">
+                                <label>Company Address</label>
+                                <textarea
+                                    rows="2"
+                                    placeholder="Company address (City, State, Country)"
+                                />
+                            </div>
 
+
+                            <div className="form-group">
+                                <label>Phone</label>
                                 <MuiTelInput
                                     value={phone}
                                     onChange={setPhone}
                                     defaultCountry="IN"
-
                                     forceCallingCode
                                     fullWidth
                                     size="medium"
-                                    error={phone.length > 0 && phone.length < 10}
-                                    helperText={
-                                        phone.length > 0 && phone.length < 10
-                                            ? "Enter a valid phone number"
-                                            : ""
-                                    }
                                 />
                             </div>
 
-                            <div className="form-group animate fade-up delay-1">
+                            {/* ===== Job Details ===== */}
+                            <div className="form-group">
                                 <label>Position to Fill</label>
-                                <input type="text" placeholder="e.g. Senior Developer" />
+                                <input type="text" placeholder="e.g. Frontend Developer" />
                             </div>
 
-                            <div className="form-group animate fade-up delay-1">
+                            <div className="form-group">
+                                <label>Employment Type</label>
+                                <select>
+                                    <option>Full-time</option>
+                                    <option>Part-time</option>
+                                    <option>Contract</option>
+                                    <option>Internship</option>
+                                </select>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Experience Level</label>
+                                <select>
+                                    <option>Fresher</option>
+                                    <option>Mid-Level</option>
+                                    <option>Senior</option>
+                                </select>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Work Mode</label>
+                                <select>
+                                    <option>Onsite</option>
+                                    <option>Remote</option>
+                                    <option>Hybrid</option>
+                                </select>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Location</label>
+                                <input type="text" placeholder="City / Remote" />
+                            </div>
+
+                            {/* ===== Compensation & Timeline ===== */}
+                            <div className="form-group">
+                                <label>Salary Range</label>
+                                <input type="text" placeholder="e.g. ₹6–10 LPA" />
+                            </div>
+
+                            <div className="form-group">
                                 <label>Urgency</label>
                                 <select>
-                                    <option>Immediate (1-2 weeks)</option>
-                                    <option>Short Term (1 month)</option>
+                                    <option>Immediate</option>
+                                    <option>Within 1 Month</option>
                                     <option>Flexible</option>
                                 </select>
                             </div>
 
-                            <div className="form-group animate fade-up delay-1 full-width">
-                                <label>Job Requirements</label>
+                            {/* ===== Requirements ===== */}
+                            <div className="form-group full-width">
+                                <label>Key Skills / Requirements</label>
                                 <textarea
-                                    rows="5"
-                                    placeholder="Describe the role, required skills, experience level, and any specific requirements..."
+                                    rows="4"
+                                    placeholder="Mention required skills, experience, tools, or expectations"
                                 />
                             </div>
+                            <div className="form-group">
+                                <label>Upload Job Description (Optional)</label>
+
+                                {!file && (
+                                    <input
+                                        type="file"
+                                        onChange={(e) => setFile(e.target.files[0])}
+                                    />
+                                )}
+
+                                {file && (
+                                    <div className="uploaded-file">
+                                        <span>{file.name}</span>
+                                        <button
+                                            type="button"
+                                            className="cancel-btn"
+                                            onClick={() => setFile(null)}
+                                        >
+                                            ✕
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+
+
 
                             <button type="submit" className="submit-btn">
                                 Submit Hiring Request
@@ -198,6 +271,7 @@ function HireTalent() {
                         </form>
                     </div>
                 </section>
+
             </div>
         </>
     );
