@@ -102,8 +102,8 @@ function Footer() {
 
               {/* Phone */}
               <li>
-                <a href="tel:+918976246255">
-                  <i className="fa-solid fa-phone" style={{ marginRight: "2px" }}></i> +91 8976246255 / +91 8650592915
+                <a href="tel:+918976246255"  style={{ display:"flex" , alignItems:"flex-start"}}>
+                  <i className="fa-solid fa-phone" style={{marginRight: "6px" }}></i> +91 8976246255 /<br/> +91 8650592915
                 </a>
               </li>
 

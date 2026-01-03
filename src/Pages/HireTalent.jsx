@@ -228,7 +228,11 @@ function HireTalent() {
                   <label>Experience Level</label>
                   <select>
                     <option>Fresher</option>
-                    <option>Mid-Level</option>
+                    <option>1 Year</option>
+                    <option>2 Years</option>
+                    <option>3 Years</option>
+                    <option>4 Years</option>
+                    <option>5 Years</option>
                     <option>Senior</option>
                   </select>
                 </div>
@@ -245,11 +249,6 @@ function HireTalent() {
                 <div className="form-group">
                   <label>Location</label>
                   <input type="text" />
-                </div>
-
-                <div className="form-group">
-                  <label>Number of Positions</label>
-                  <input type="number" min="1" />
                 </div>
               </FormSection>
                           
