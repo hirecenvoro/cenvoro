@@ -576,128 +576,11 @@ body {
   color: #fff;
 }
 
-/* ------------------------------
-   Service Details Section
------------------------------- */
 
-/* MAIN CONTAINER */
-.service-detail {
-  width: 90%;
-  margin: 20px auto;
-  background: #ffffff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-/* IMAGE SECTION */
-.service-detail-image img {
-    width: 100%;
-  height: 100%;
-  object-fit: cover;   /* keeps image proportional */
-  display: block;
-}
-
-/* CONTENT SECTION */
-.service-detail-content {
-  padding: 35px 40px;
-}
-
-/* TITLE */
-.service-detail-content h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #0a3d91;
-  margin-bottom: 15px;
-  font-family: "Montserrat", sans-serif;
-}
-
-.service-detail-content h3 {
-  font-size: 26px;
-  font-weight: 700;
-  color: #0a3d91;
-  margin-bottom: 15px;
-  font-family: "Montserrat", sans-serif;
-}
-
-/* PARAGRAPH */
-.service-detail-content p {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 25px;
-  line-height: 1.6;
-  font-weight: 500;
-  font-family: Poppins, sans-serif;
-}
-
-/* LIST STYLING */
-.benefits-list {
-  margin-bottom: 25px;
-  padding-left: 0;
-}
-
-.benefits-list li {
-  list-style: none;
-  font-size: 16px;
-  margin-bottom: 12px;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-   font-family: "Poppins", sans-serif;
-}
-
-.benefits-list li i {
-  color: #0b60db;
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-/* BUTTON STYLING */
-.btn {
-  display: inline-block;
-  background-color: #0b60db;
-  color: #fff;
-  padding: 10px 22px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
-  font-family: "Segoe UI", sans-serif;
-}
 
 .btn:hover {
   background-color: #084eac;
 }
-
-/* BACK TO SERVICES BUTTON */
-.back-to-services {
-  display: inline-block;
-  margin-left: 15px;
-  margin-top: 15px;
-  color: #0b60db;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
-  font-family: "Segoe UI", sans-serif
-}
-
-.back-to-services:hover {
-  text-decoration: underline;
-}
-
-.check-icon {
-  width: 18px;
-  height: 18px;
-  margin-right: 8px;
-}
-
-
 
 /*******************************************************************************************************************/
 
@@ -2118,40 +2001,6 @@ footer p {
   color: #ffffff; /* icon becomes white on hover */
 }
 
-/* Animation for service details */
-.service-detail {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
-}
-
-/* When the block becomes visible (display: flex/block) */
-.service-detail.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hidden before scroll */
-.fade-on-scroll {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: all 0.6s ease;
-}
-
-/* When visible in viewport */
-.fade-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger effect */
-.benefits-list li:nth-child(1) { transition-delay: 0.1s; }
-.benefits-list li:nth-child(2) { transition-delay: 0.2s; }
-.benefits-list li:nth-child(3) { transition-delay: 0.3s; }
-.benefits-list li:nth-child(4) { transition-delay: 0.4s; }
-.benefits-list li:nth-child(5) { transition-delay: 0.5s; }
-.benefits-list li:nth-child(6) { transition-delay: 0.6s; }
-
 .about-text,
 .about-image {
   opacity: 0;
@@ -2368,49 +2217,6 @@ footer p {
   font-family:Poppins, sans-serif;
 }
 
-
-/* ===============================
-   SERVICE DETAILS
-================================ */
-.service-details {
-  margin-top: 40px;
-}
-
-.service-detail {
-  gap: 50px;
-}
-
-.service-detail-image img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-/* ===============================
-   BACK LINK
-================================ */
-.back-to-services {
-  display: inline-block;
-  margin-top: 20px;
-  color: #4f46e5;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* ===============================
-   BENEFITS LIST ANIMATION
-================================ */
-.fade-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.fade-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* ===============================
    MOBILE RESPONSIVE (ALIGNED)
 ================================ */
@@ -2432,10 +2238,6 @@ footer p {
     align-items: center;
   }
 }
-
-
-
-
 
 /* Initial hidden state */
 .animate-img,
@@ -2460,4 +2262,140 @@ footer p {
 .animate-text.show {
   opacity: 1;
   transform: translateX(0);
+}
+
+
+/* Details */
+
+.services-section {
+  padding: 80px 20px;
+  width: 100%;;
+}
+
+.services-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  padding: 20px 32px;
+  background: #f5f7ff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-details {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== MAIN DETAIL LAYOUT ===== */
+.service-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideFromTop 0.6s ease-out forwards;
+}
+
+/* CONTENT LEFT */
+.service-detail-content {
+  flex: 1;
+  max-width: 55%;
+}
+
+.service-detail-content h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color:rgb(10,61,145);
+  font-weight: 700;
+}
+
+.service-detail-content h3 {
+  margin-top: 20px;
+  color:rgb(10,61,145);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.service-detail-content p {
+  margin-bottom: 18px;
+  line-height: 1.6;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+}
+
+.benefits-list {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.benefits-list li {
+  margin-bottom: 8px;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+
+/* IMAGE RIGHT */
+.service-detail-image {
+  flex: 1;
+  max-width: 45%;
+  margin-top: 70px;
+}
+
+.service-detail-image img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* BACK LINK */
+.back-to-services {
+  display: inline-block;
+  margin-left: 20px;
+  color: #1e5bff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ===== OPEN FROM TOP ANIMATION ===== */
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .service-detail {
+    flex-direction: column-reverse;
+  }
+
+  .service-detail-content,
+  .service-detail-image {
+    max-width: 100%;
+  }
+
+  .service-detail-content h2 {
+    font-size: 22px;
+  }
 }
