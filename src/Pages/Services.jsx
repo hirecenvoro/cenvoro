@@ -30,6 +30,26 @@ function Services() {
     return () => observer.disconnect();
   }, [activeService]);
 
+
+useEffect(() => {
+  if (!activeService) return;
+
+  const content = document.querySelector(".service-detail-content");
+  const image = document.querySelector(".service-detail-image");
+
+  if (content && image) {
+    content.classList.remove("animate-content");
+    image.classList.remove("animate-image");
+
+    // force reflow to restart animation
+    void content.offsetWidth;
+
+    content.classList.add("animate-content");
+    image.classList.add("animate-image");
+  }
+}, [activeService]);
+
+
   return (
     <section className="services" id="services">
       <div className="container">
@@ -151,7 +171,7 @@ function Services() {
           {/* ================= Candidates ================= */}
           {activeService === "candidates" && (
             <div className="service-detail">
-              <div className="service-detail-content">
+              <div className="service-detail-content animate-content">
                 <h2>For Candidates - Career Growth Support</h2>
                 <p>
                   At CENVORO, we believe careers should be built, not just jobs filled.
@@ -181,7 +201,7 @@ function Services() {
                 </span>
               </div>
 
-              <div className="service-detail-image">
+              <div className="service-detail-image animate-image">
                 <img
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
                   alt="Career Growth"
@@ -193,7 +213,7 @@ function Services() {
           {/* ================= Institutes ================= */}
           {activeService === "institutes" && (
             <div className="service-detail">
-              <div className="service-detail-content">
+              <div className="service-detail-content animate-content">
                 <h2>For Institutes - Placement Partnerships</h2>
                 <p>We strengthen student placement outcomes.</p>
 
@@ -222,7 +242,7 @@ function Services() {
                 </span>
               </div>
 
-              <div className="service-detail-image">
+              <div className="service-detail-image animate-image">
                 <img
                   src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80"
                   alt="Institute Partnerships"
@@ -234,7 +254,7 @@ function Services() {
           {/* ================= Employers ================= */}
           {activeService === "employers" && (
             <div className="service-detail">
-              <div className="service-detail-content">
+              <div className="service-detail-content animate-content">
                 <h2>For Employers - Recruitment & Training</h2>
                 <p>We provide companies with efficient hiring solutions.</p>
 
@@ -273,7 +293,7 @@ function Services() {
                 </span>
               </div>
 
-              <div className="service-detail-image">
+              <div className="service-detail-image animate-image">
                 <img
                   src="https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg"
                   alt="Recruitment Solutions"
