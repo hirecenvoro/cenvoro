@@ -36,20 +36,25 @@ function Services() {
   useEffect(() => {
     if (!activeService) return;
 
-    const content = document.querySelector(".service-detail-content");
-    const image = document.querySelector(".service-detail-image");
+    const activeDetail = document.querySelector(
+      `.service-detail`
+    );
 
-    if (content && image) {
-      content.classList.remove("animate-content");
-      image.classList.remove("animate-image");
+    if (!activeDetail) return;
 
-      // force reflow to restart animation
-      void content.offsetWidth;
+    const content = activeDetail.querySelector(".service-detail-content");
+    const image = activeDetail.querySelector(".service-detail-image");
 
-      content.classList.add("animate-content");
-      image.classList.add("animate-image");
-    }
+    content?.classList.remove("animate-content");
+    image?.classList.remove("animate-image");
+
+    setTimeout(() => {
+      content?.classList.add("animate-content");
+      image?.classList.add("animate-image");
+    }, 350);
   }, [activeService]);
+
+
 
   const openService = (service) => {
     setActiveService(service);
@@ -63,6 +68,36 @@ function Services() {
     }, 50);
   };
 
+
+  useEffect(() => {
+    if (!activeService) return;
+
+    const activeDetail = document.querySelector(".service-detail");
+    if (!activeDetail) return;
+
+    const lists = activeDetail.querySelectorAll(".benefits-list");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    setTimeout(() => {
+      lists.forEach((list) => {
+        list.classList.remove("show");
+        observer.observe(list);
+      });
+    }, 400);
+
+    return () => observer.disconnect();
+  }, [activeService]);
 
 
   return (
@@ -178,14 +213,14 @@ function Services() {
           {/* ================= Candidates ================= */}
           {activeService === "candidates" && (
             <div className="service-detail">
-              <div className="service-detail-content animate-content">
+              <div className="service-detail-content">
                 <h2>For Candidates - Career Growth Support</h2>
                 <p>
                   At CENVORO, we believe careers should be built, not just jobs filled.
                   We guide individuals at every stage of their professional journey with:
                 </p>
 
-                <ul className="benefits-list">
+                <ul className="benefits-list animate-list">
                   <li><i className="fas fa-check"></i>Access to opportunities across industries and MNCs</li>
                   <li><i className="fas fa-check"></i>Resume building & interview preparation support</li>
                   <li><i className="fas fa-check"></i>
@@ -195,7 +230,7 @@ function Services() {
                 </ul>
 
                 <h3>Key Benefits:</h3>
-                <ul className="benefits-list">
+                <ul className="benefits-list animate-list">
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Better career opportunities</li>
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Improved employability skills</li>
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Professional growth with guided mentorship</li>
@@ -229,11 +264,11 @@ function Services() {
           {/* ================= Institutes ================= */}
           {activeService === "institutes" && (
             <div className="service-detail">
-              <div className="service-detail-content animate-content">
+              <div className="service-detail-content">
                 <h2>For Institutes - Placement Partnerships</h2>
                 <p>We strengthen student placement outcomes.</p>
 
-                <ul className="benefits-list">
+                <ul className="benefits-list animate-list">
                   <li><i className="fas fa-check"></i> Structured MoUs for smooth placement processes</li>
                   <li><i className="fas fa-check"></i> Industry-ready training modules for students and alumni</li>
                   <li><i className="fas fa-check"></i> Corporate connects and exclusive recruitment drives</li>
@@ -242,7 +277,7 @@ function Services() {
 
 
                 <h3>Key Benefits:</h3>
-                <ul className="benefits-list">
+                <ul className="benefits-list animate-list">
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Stronger institute-industry relationships</li>
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Higher placement success rates</li>
                   <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Better-prepared graduates</li>
@@ -279,11 +314,11 @@ function Services() {
           {/* ================= Employers ================= */}
           {activeService === "employers" && (
             <div className="service-detail">
-              <div className="service-detail-content animate-content">
+              <div className="service-detail-content">
                 <h2>For Employers - Recruitment & Training</h2>
                 <p>We provide companies with efficient hiring solutions.</p>
 
-                <ul className="benefits-list">
+                <ul className="benefits-list animate-list">
                   <li><i className="fas fa-check"></i>End-to-end recruitment support</li>
                   <li><i className="fas fa-check"></i>Pre-screened candidates aligned with role & culture fit</li>
                   <li><i className="fas fa-check"></i>Tailored corporate training programs</li>
@@ -291,7 +326,7 @@ function Services() {
                 </ul>
 
                 <h3>Key Benefits:</h3>
-                <ul className="benefits-list">
+                <ul className="benefits-list animate-list">
                   <li>
                     <i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }} />
                     Faster and cost-effective hiring

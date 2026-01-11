@@ -2409,43 +2409,47 @@ footer p {
   }
 }
 
-
 /* ---------- Base hidden state ---------- */
 .service-detail-content,
 .service-detail-image {
   opacity: 0;
+  transform: translateY(8px);
+  will-change: opacity, transform;
 }
 
 /* ---------- Content fades from LEFT ---------- */
 .animate-content {
-  animation: fadeFromLeft 0.8s ease-out forwards;
+  animation: fadeFromLeft 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* ---------- Image fades from RIGHT ---------- */
 .animate-image {
-  animation: fadeFromRight 0.8s ease-out forwards;
+  animation: fadeFromRight 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.15s;
 }
 
 /* ---------- Bullet points stagger ---------- */
-/* Reset list items */
 .benefits-list li {
   opacity: 0;
-  transform: translateY(14px);
-  animation: fadeUp 0.4s ease forwards;
+  transform: translateY(10px);
 }
 
-/* Staggered delay */
-.benefits-list li:nth-child(1) { animation-delay: 0.35s; }
-.benefits-list li:nth-child(2) { animation-delay: 0.5s; }
-.benefits-list li:nth-child(3) { animation-delay: 0.65s; }
-.benefits-list li:nth-child(4) { animation-delay: 0.8s; }
-.benefits-list li:nth-child(5) { animation-delay: 0.95s; }
+.benefits-list.show li {
+  animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 
-/* Fade-up keyframe */
+.benefits-list.show li:nth-child(1) { animation-delay: 0.2s; }
+.benefits-list.show li:nth-child(2) { animation-delay: 0.35s; }
+.benefits-list.show li:nth-child(3) { animation-delay: 0.5s; }
+.benefits-list.show li:nth-child(4) { animation-delay: 0.65s; }
+.benefits-list.show li:nth-child(5) { animation-delay: 0.8s; }
+
+
+/* ---------- Fade-up keyframe ---------- */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -2453,12 +2457,11 @@ footer p {
   }
 }
 
-
 /* ---------- Keyframes ---------- */
 @keyframes fadeFromLeft {
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-24px);
   }
   to {
     opacity: 1;
@@ -2469,7 +2472,7 @@ footer p {
 @keyframes fadeFromRight {
   from {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(24px);
   }
   to {
     opacity: 1;
@@ -2477,16 +2480,15 @@ footer p {
   }
 }
 
-
+/* ---------- Inner content timing ---------- */
 .service-detail-content h2 {
   animation-delay: 0s;
 }
 
 .service-detail-content p {
-  animation-delay: 0.2s;
-}
-
-.service-detail-content ul {
   animation-delay: 0.35s;
 }
 
+.service-detail-content ul {
+  animation-delay: 0.55s;
+}
