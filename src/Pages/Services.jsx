@@ -266,8 +266,7 @@ function Services() {
             <div className="service-detail">
               <div className="service-detail-content">
                 <h2>For Institutes - Placement Partnerships</h2>
-                <p>We strengthen student placement outcomes.</p>
-
+                <p>We strengthen student placement outcomes by aligning institutes with evolving industry hiring needs.</p>
                 <ul className="benefits-list animate-list">
                   <li><i className="fas fa-check"></i> Structured MoUs for smooth placement processes</li>
                   <li><i className="fas fa-check"></i> Industry-ready training modules for students and alumni</li>
@@ -316,7 +315,16 @@ function Services() {
             <div className="service-detail">
               <div className="service-detail-content">
                 <h2>For Employers - Recruitment & Training</h2>
-                <p>We provide companies with efficient hiring solutions.</p>
+                <p
+  className="animate-para"
+  style={{
+  transition: "opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s",
+}}
+
+>
+  We provide companies with efficient hiring solutions aligned to business goals, culture, and long-term growth.
+</p>
+
 
                 <ul className="benefits-list animate-list">
                   <li><i className="fas fa-check"></i>End-to-end recruitment support</li>
