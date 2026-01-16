@@ -2431,19 +2431,20 @@ footer p {
 /* ---------- Bullet points stagger ---------- */
 .benefits-list li {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(40px); /* more travel = slower feel */
 }
 
 .benefits-list.show li {
-  animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeUp 3.5s cubic-bezier(0.12, 0.9, 0.25, 1) forwards;
 }
 
-/* Increased stagger delay */
-.benefits-list.show li:nth-child(1) { animation-delay: 0.3s; }
-.benefits-list.show li:nth-child(2) { animation-delay: 0.55s; }
-.benefits-list.show li:nth-child(3) { animation-delay: 0.8s; }
-.benefits-list.show li:nth-child(4) { animation-delay: 1.05s; }
-.benefits-list.show li:nth-child(5) { animation-delay: 1.3s; }
+/* Large stagger delays */
+.benefits-list.show li:nth-child(1) { animation-delay: 0.8s; }
+.benefits-list.show li:nth-child(2) { animation-delay: 1.6s; }
+.benefits-list.show li:nth-child(3) { animation-delay: 2.4s; }
+.benefits-list.show li:nth-child(4) { animation-delay: 3.2s; }
+.benefits-list.show li:nth-child(5) { animation-delay: 4s; }
+
 
 /* ---------- Fade-up keyframe ---------- */
 @keyframes fadeUp {
