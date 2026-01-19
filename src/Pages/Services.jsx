@@ -5,6 +5,7 @@ function Services() {
   const [activeService, setActiveService] = useState(null);
   const servicesRef = useRef(null);
 
+   //Services Animation//
 
   useEffect(() => {
     if (activeService !== null) return;
@@ -33,28 +34,7 @@ function Services() {
   }, [activeService]);
 
 
-  useEffect(() => {
-    if (!activeService) return;
-
-    const activeDetail = document.querySelector(
-      `.service-detail`
-    );
-
-    if (!activeDetail) return;
-
-    const content = activeDetail.querySelector(".service-detail-content");
-    const image = activeDetail.querySelector(".service-detail-image");
-
-    content?.classList.remove("animate-content");
-    image?.classList.remove("animate-image");
-
-    setTimeout(() => {
-      content?.classList.add("animate-content");
-      image?.classList.add("animate-image");
-    }, 350);
-  }, [activeService]);
-
-
+ // Learn more //
 
   const openService = (service) => {
     setActiveService(service);
@@ -67,38 +47,6 @@ function Services() {
       });
     }, 50);
   };
-
-
-  useEffect(() => {
-    if (!activeService) return;
-
-    const activeDetail = document.querySelector(".service-detail");
-    if (!activeDetail) return;
-
-    const lists = activeDetail.querySelectorAll(".benefits-list");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    setTimeout(() => {
-      lists.forEach((list) => {
-        list.classList.remove("show");
-        observer.observe(list);
-      });
-    }, 400);
-
-    return () => observer.disconnect();
-  }, [activeService]);
-
 
   return (
     <section className="services" id="services" ref={servicesRef}>

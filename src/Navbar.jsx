@@ -62,8 +62,8 @@ export default function Navbar() {
           onClick={goHome}
           style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
         >
-          <img src="/LOGO.png" alt="CENVORO Logo" style={{ height: "45px" }} />
-          <strong style={{ marginLeft: "5px", fontSize:"18px"}}>CENVORO</strong>
+          <img src="/LOGO.png" alt="CENVORO Logo" style={{ height: "35px" }} />
+          <strong style={{ marginLeft: "10px", fontSize:"18px"}}>CENVORO</strong>
         </span>
       </div>
 
