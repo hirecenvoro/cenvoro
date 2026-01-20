@@ -36,9 +36,6 @@ function Services() {
       <div className="container">
         <h2 className="section-title">Our Services</h2>
 
-        {/* =================================================
-            SERVICE OVERVIEW (GREY CIRCLE + ICON)
-        ================================================= */}
         <>
           {/* Candidates */}
           <div className="service-row">
@@ -59,6 +56,7 @@ function Services() {
               <button
                 className="btn-primary"
                 onClick={() => navigate("/services/candidates")}
+                style={{width:"200px"}}
               >
                 Learn More
               </button>
@@ -91,6 +89,7 @@ function Services() {
               <button
                 className="btn-primary"
                 onClick={() => navigate("/services/institutes")}
+                style={{width:"200px"}}
               >
                 Learn More
               </button>
@@ -116,6 +115,7 @@ function Services() {
               <button
                 className="btn-primary"
                 onClick={() => navigate("/services/employers")}
+                style={{width:"200px"}}
               >
                 Learn More
               </button>
