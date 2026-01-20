@@ -2530,6 +2530,9 @@ footer p {
   }
 }
 
+.services #particles {
+  display: none;
+}
 
 
 
