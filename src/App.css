@@ -2265,38 +2265,6 @@ footer p {
 }
 
 
-/* Details */
-
-.services-section {
-  padding: 80px 20px;
-  width: 100%;;
-}
-
-.services-list {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.service-card {
-  padding: 20px 32px;
-  background: #f5f7ff;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-}
-
-.service-details {
-  width: 100%;
-  overflow: hidden;
-}
-
 /* ===== MAIN DETAIL LAYOUT ===== */
 .service-detail {
   display: flex;
@@ -2528,10 +2496,6 @@ footer p {
     width: 100%;
     border-radius: 18px;
   }
-}
-
-.services #particles {
-  display: none;
 }
 
 

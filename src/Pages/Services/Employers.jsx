@@ -15,27 +15,28 @@ function Employers() {
             <h2 className="section-title" style={{margin:"5px"}}>Our Services</h2>
             <div className="service-detail">
                 <div className="service-detail-content">
-                    <h2>For Candidates - Career Growth Support</h2>
+                    <h2>For Employers - Recruitment & Training</h2>
                     <p>
-                        At CENVORO, we believe careers should be built, not just jobs filled.
-                        We guide individuals at every stage of their professional journey with:
+                        We provide companies with efficient hiring solutions aligned to business goals, culture, and long-term growth.
                     </p>
 
                     <ul className="benefits-list animate-list">
-                        <li><i className="fas fa-check"></i>Access to opportunities across industries and MNCs</li>
-                        <li><i className="fas fa-check"></i>Resume building & interview preparation support</li>
+                        <li><i className="fas fa-check"></i>End-to-end recruitment support</li>
+                        <li><i className="fas fa-check"></i>Pre-screened candidates aligned with role & culture fit</li>
                         <li><i className="fas fa-check"></i>
-                            Skill development and mentorship programs designed to match
-                            industry expectations
+                           Tailored corporate training programs
+                        </li>
+                        <li><i className="fas fa-check"></i>
+                        Ongoing workforce performance support
                         </li>
                     </ul>
 
                     <h3>Key Benefits:</h3>
                     <ul className="benefits-list animate-list">
-                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Better career opportunities</li>
-                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Improved employability skills</li>
-                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Professional growth with guided mentorship</li>
-                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Confidence to succeed in interviews and workplaces</li>
+                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i> Faster and cost-effective hiring</li>
+                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i> Access to industry-ready candidates</li>
+                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i> Lower attrition rates</li>
+                        <li><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i> Stronger, future-ready teams</li>
                     </ul>
 
                     <a href="/hiretalent" className="btn-primary">Find Talent</a>
