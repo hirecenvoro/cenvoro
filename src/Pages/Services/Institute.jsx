@@ -83,7 +83,7 @@ function Institute() {
                             navigate("/", { state: { scrollTo: "contact" } });
                         }}>Partner With Us</a>
                     <span
-                        className="back-to-services animate-content no-delay"
+                        className="back-to-services animate-content"
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "services" } });
                         }}

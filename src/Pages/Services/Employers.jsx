@@ -85,7 +85,7 @@ function Employers() {
 
                     <a href="/hiretalent" className="btn-primary animate-content">Find Talent</a>
                     <span
-                        className="back-to-services animate-content no-delay"
+                        className="back-to-services animate-content"
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "services" } });
                         }}
