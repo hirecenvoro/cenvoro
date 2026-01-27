@@ -57,8 +57,18 @@ function Candidates() {
 
 
     return (
-        <section className="service-detail-page">
-            <h2 className="section-title animate-content" style={{ margin: "5px" }}>
+        <section className="service-detail-page"
+            style={{
+                backgroundImage:
+                    "url('/Candi.jpeg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
+            }}>
+            <h2 className="section-title animate-content"
+            style={{ marginTop:"5px",
+                marginBottom:"0"}}>
                 Our Services
             </h2>
 
@@ -91,7 +101,7 @@ function Candidates() {
                         <li className="animate-item"><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Professional growth with guided mentorship</li>
                         <li className="animate-item"><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Confidence to succeed in interviews and workplaces</li>
                     </ul>
-
+                    <br></br>
                     <a
                         className="btn-primary animate-content"
                         onClick={() => {
@@ -102,7 +112,7 @@ function Candidates() {
                     </a>
 
                     <span
-                        className="back-to-services animate-content"
+                        className="back-to-services"
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "services" } });
                         }}
@@ -111,12 +121,9 @@ function Candidates() {
                     </span>
                 </div>
 
-                <div className="service-detail-image animate-image" style={{ zIndex: "0" }}>
-                    <img
-                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
-                        alt="Career Growth"
-                    />
-                </div>
+
+
+
             </div>
         </section>
     );

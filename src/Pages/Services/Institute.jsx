@@ -56,8 +56,17 @@ function Institute() {
 
 
     return (
-        <section className="service-detail-page">
-            <h2 className="section-title animate-content" style={{ margin: "5px" }}>Our Services</h2>
+        <section className="service-detail-page"
+        style={{
+                backgroundImage:
+                    "url('/Insti.jpeg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
+            }}>
+            <h2 className="section-title animate-content" style={{ marginTop:"5px",
+                marginBottom:"0"}}>Our Services</h2>
             <div className="service-detail">
                 <div className="service-detail-content">
                     <h2 className="animate-content">For Institutes - Placement Partnerships</h2>
@@ -83,7 +92,7 @@ function Institute() {
                             navigate("/", { state: { scrollTo: "contact" } });
                         }}>Partner With Us</a>
                     <span
-                        className="back-to-services animate-content"
+                        className="back-to-services"
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "services" } });
                         }}
@@ -92,12 +101,7 @@ function Institute() {
                     </span>
                 </div>
 
-                <div className="service-detail-image animate-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80"
-                        alt="Institute Partnerships"
-                    />
-                </div>
+                
             </div>
         </section>
     );
