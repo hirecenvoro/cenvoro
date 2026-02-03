@@ -2286,13 +2286,13 @@ footer p {
 .service-detail-content h2 {
   font-size: 28px;
   margin-bottom: 16px;
-  color:rgb(10,61,145);
+  color:rgb(255, 255, 255);
   font-weight: 700;
 }
 
 .service-detail-content h3 {
   margin-top: 20px;
-  color:rgb(10,61,145);
+  color:rgb(255, 255, 255);
   font-size: 26px;
   font-weight: 700;
 }
@@ -2336,7 +2336,7 @@ footer p {
 .back-to-services {
   display: inline-block;
   margin-left: 20px;
-  color: #1e5bff;
+  color: #ffffff;
   cursor: pointer;
   font-weight: 500;
 }
@@ -2380,11 +2380,13 @@ footer p {
 
 /*Service details animation */
 
+/* Service details animation */
+
 /* Content hidden initially */
 .animate-content {
   opacity: 0;
-  transform: translateY(60px);
-  transition: all 0.7s ease;
+  transform: translateY(70px);
+  transition: all 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   pointer-events: none;
   color: white;
 }
@@ -2404,8 +2406,8 @@ footer p {
 /* Hide list items initially */
 .animate-item {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* When visible */
@@ -2414,40 +2416,48 @@ footer p {
   transform: translateY(0);
 }
 
-.animate-content {
-  opacity: 0;
-  transform: translateY(45px);
-  transition: all 0.6s ease;
-}
-
-.animate-content.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .service-detail-page {
     padding: 40px 15px;
-    background-position: center top; /* better crop on mobile */
+    background-position: center top;
   }
 }
 
+/* Floating particles/bubbles slow */
 @keyframes floatUp {
   0% {
     transform: translateY(0);
     opacity: 0;
   }
 
-  20% {
-    opacity: 0.6;
+  30% {
+    opacity: 0.7;
   }
 
   100% {
-    transform: translateY(-110vh);
+    transform: translateY(-120vh);
     opacity: 0;
   }
 }
 
 
+.heading {
+  text-align: center;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  position: relative;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ffffff;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}

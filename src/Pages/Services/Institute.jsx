@@ -99,16 +99,16 @@ function Institute() {
                     padding: "0px 10px"
                 }}
             >
-            <h2 className="section-title animate-content" style={{ margin: "4px" }}>Our Services</h2>
+            <h2 className="heading animate-content" style={{ margin: "0px" }}>Our Services</h2>
             <div className="service-detail">
                 <div className="service-detail-content">
-                    <h2 className="animate-content">For Institutes - Placement Partnerships</h2>
+                    <h2 className="animate-content" style={{ margintop: "0px" }}>For Institutes - Placement Partnerships</h2>
                     <p className="animate-content">We strengthen student placement outcomes by aligning institutes with evolving industry hiring needs.</p>
                     <ul className="benefits-list animate-list animate-content">
-                        <li className="animate-item"><i className="fas fa-check"></i> Structured MoUs for smooth placement processes</li>
-                        <li className="animate-item"><i className="fas fa-check"></i> Industry-ready training modules for students and alumni</li>
-                        <li className="animate-item"><i className="fas fa-check"></i> Corporate connects and exclusive recruitment drives</li>
-                        <li className="animate-item"><i className="fas fa-check"></i> Continuous employer feedback to improve curriculum relevance</li>
+                        <li className="animate-item"><i className="fas fa-check"  style={{ color: "white" }}></i> Structured MoUs for smooth placement processes</li>
+                        <li className="animate-item"><i className="fas fa-check"  style={{ color: "white" }}></i> Industry-ready training modules for students and alumni</li>
+                        <li className="animate-item"><i className="fas fa-check"  style={{ color: "white" }}></i> Corporate connects and exclusive recruitment drives</li>
+                        <li className="animate-item"><i className="fas fa-check"  style={{ color: "white" }}></i> Continuous employer feedback to improve curriculum relevance</li>
                     </ul>
 
 
@@ -120,7 +120,7 @@ function Institute() {
                         <li className="animate-item"><i className="fas fa-star" style={{ color: "#ff9800", marginRight: "10px" }}></i>Enhanced institute reputation and credibility</li>
                     </ul>
 
-                    <a className="btn-primary animate-content" style={{marginRight:"0px"}}
+                    <a className="btn-primary animate-content"
                         onClick={() => {
                             navigate("/", { state: { scrollTo: "contact" } });
                         }}>Partner With Us</a>

@@ -73,7 +73,7 @@ function Candidates() {
                     width: "100%",
                     height: "100%",
                     backgroundImage:
-                        "url('/CANDIDATES1.png')",
+                        "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     filter: "blur(12px)",
@@ -97,10 +97,11 @@ function Candidates() {
                 style={{
                     position: "relative",
                     zIndex: 2,
-                    padding: "7px 20px"
+                    padding: "1px 10px"
                 }}
             >
-                <h2 className="section-title animate-content" style={{ margin: "5px" }}>
+                <h2 className="heading animate-content" style={{ margin: "1px", textAlign: "center", }
+                }>
                     Our Services
                 </h2>
 
@@ -116,13 +117,9 @@ function Candidates() {
                         </p>
 
                         <ul className="benefits-list animate-list animate-content">
-                            <li className="animate-item"><i className="fas fa-check"></i>Access to opportunities across industries and MNCs</li>
-                            <li className="animate-item"><i className="fas fa-check"></i>Resume building & interview preparation support</li>
-                            <li className="animate-item">
-                                <i className="fas fa-check"></i>
-                                Skill development and mentorship programs designed to match
-                                industry expectations
-                            </li>
+                            <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Access to opportunities across industries and MNCs</li>
+                            <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Resume building & interview preparation support</li>
+                            <li className="animate-item"><i className="fas fa-check"  style={{ color: "white" }}></i>Skill development and mentorship programs designed to match industry expectations </li>
                         </ul>
 
                         <h3 className="animate-content">Key Benefits:</h3>

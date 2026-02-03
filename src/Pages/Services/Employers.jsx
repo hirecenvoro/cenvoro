@@ -71,7 +71,7 @@ function Employers() {
                     width: "100%",
                     height: "100%",
                     backgroundImage:
-                        "url('/EMPLOYERS.png')",
+                        "url('https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg?t=st=1721564726~exp=1721568326~hmac=0c8d4d6c6c9e6a5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a5b5c5d5e5f5a&amp;w=1380')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     filter: "blur(12px)",
@@ -98,7 +98,7 @@ function Employers() {
                     padding: "10px 20px"
                 }}
             >
-            <h2 className="section-title animate-content" style={{ margin: "5px" }}>Our Services</h2>
+            <h2 className="heading animate-content" style={{ margin: "5px" }}>Our Services</h2>
             <div className="service-detail">
                 <div className="service-detail-content">
                     <h2 className="animate-content">For Employers - Recruitment & Training</h2>
@@ -107,14 +107,10 @@ function Employers() {
                     </p>
 
                     <ul className="benefits-list animate-list">
-                        <li className="animate-item"><i className="fas fa-check"></i>End-to-end recruitment support</li>
-                        <li className="animate-item"><i className="fas fa-check"></i>Pre-screened candidates aligned with role & culture fit</li>
-                        <li className="animate-item"><i className="fas fa-check"></i>
-                            Tailored corporate training programs
-                        </li>
-                        <li className="animate-item"><i className="fas fa-check"></i>
-                            Ongoing workforce performance support
-                        </li>
+                        <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>End-to-end recruitment support</li>
+                        <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Pre-screened candidates aligned with role & culture fit</li>
+                        <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Tailored corporate training programs</li>
+                        <li className="animate-item"><i className="fas fa-check" style={{ color: "white" }}></i>Ongoing workforce performance support</li>
                     </ul>
 
                     <h3 className="animate-content">Key Benefits:</h3>
