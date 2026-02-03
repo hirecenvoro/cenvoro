@@ -2291,7 +2291,7 @@ footer p {
 }
 
 .service-detail-content h3 {
-  margin-top: 20px;
+  margin-top: 10px;
   color:rgb(255, 255, 255);
   font-size: 25px;
   font-weight: 700;
@@ -2299,7 +2299,7 @@ footer p {
 
 .service-detail-content p {
   margin-bottom: 12px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-family: Poppins, sans-serif;
   font-weight: 500;
 }

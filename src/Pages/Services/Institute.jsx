@@ -31,51 +31,48 @@ function Institute() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
- useEffect(() => {
+useEffect(() => {
   window.scrollTo(0, 0);
 
-  const lists = document.querySelectorAll(".animate-list");
+  const firstList = document.querySelectorAll(".animate-list")[0];
+  const secondList = document.querySelectorAll(".animate-list")[1];
+
+  if (!firstList || !secondList) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
 
-        const items = entry.target.querySelectorAll(".animate-item");
+        // FIRST LIST animation
+        const firstItems = firstList.querySelectorAll(".animate-item");
 
-        // stagger inside current list
-        items.forEach((item, index) => {
+        firstItems.forEach((item, index) => {
           setTimeout(() => {
             item.classList.add("show");
-          }, index * 350); // slower stagger
+          }, index * 350);
         });
 
-        observer.unobserve(entry.target);
+        // AFTER first list finishes → animate second list
+        const totalTime = firstItems.length * 350 + 200;
 
-        // 👉 Trigger NEXT list after current finishes
-        const totalTime = items.length * 350 + 200;
+        setTimeout(() => {
+          const secondItems = secondList.querySelectorAll(".animate-item");
 
-        const nextList = entry.target.nextElementSibling?.classList.contains("animate-list")
-          ? entry.target.nextElementSibling
-          : null;
+          secondItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("show");
+            }, index * 350);
+          });
+        }, totalTime);
 
-        if (nextList) {
-          setTimeout(() => {
-            const nextItems = nextList.querySelectorAll(".animate-item");
-
-            nextItems.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add("show");
-              }, index * 350);
-            });
-          }, totalTime);
-        }
+        observer.disconnect(); // run once
       });
     },
     { threshold: 0.35 }
   );
 
-  lists.forEach((list) => observer.observe(list));
+  observer.observe(firstList);
 
   return () => observer.disconnect();
 }, []);
